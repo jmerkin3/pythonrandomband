@@ -1,7 +1,7 @@
 from Myro import *
 import random
 from Graphics import *
-#tesskoo722/772
+
 #Alternative Band Names
 lista = ["The", "Team", ""]
 listb = ["Dark Blue", "Cherry", "Gray", "Maroon", ""]
@@ -24,17 +24,17 @@ if answers == 'Electric':
     choiced = random.choice(listh)
     lista.remove(choicea)
     print("Your band name is....", choicea, choiceb, choicec, choiced)
-    choicez = random.choice(liste)
-    #print(choiceb)
     if choiceb == "Pink":
-        print("FYI - The color pink is esential to your band's name. It really brings out the true flare of your music.")
+        ColorChoice = "color pink"
     if choiceb == "Nyan":
-        print("FYI - The color nyan is esential to your band's name. It really brings out the true flare of your music.")
+        ColorChoice = "color nyan"
     if choiceb == "Yellow":
-        print("FYI - The color yellow is esential to your band's name. It really brings out the true flare of your music.")
+        ColorChoice = "color yellow"
     if choiceb == "Orange":
-        print("FYI - The color orange is esential to your band's name. It really brings out the true flare of your music.")
-    
+        ColorChoice = "color orange"
+    if choiceb == "":
+        ColorChoice = "lack of color"
+
 if answers == 'Alternative':
     print("Chosen Band Genre: Alternative")
     random.choice (lista)
@@ -44,13 +44,35 @@ if answers == 'Alternative':
     choiced = random.choice(listd)
     lista.remove(choicea)
     print("Your band name is....", choicea, choiceb, choicec, choiced)
-    choicez = random.choice(lista)
     if choiceb == "Dark Blue":
-        print("FYI - The color dark blue is esential to your band's name. It really brings out the true flare of your music.")
+        ColorChoice = "color dark blue"
     if choiceb == "Cherry":
-        print("FYI - The color cherry is esential to your band's name. It really brings out the true flare of your music.")
+        ColorChoice = "color cherry"
     if choiceb == "Maroon":
-        print("FYI - The color maroon is esential to your band's name. It really brings out the true flare of your music.")
+        ColorChoice = "color maroon"
     if choiceb == "Gray":
-        print("FYI - The color gray is esential to your band's name. It really brings out the true flare of your music.")
-    
+        ColorChoice = "color gray"
+    if choiceb == "":
+        ColorChoice = "lack of color"
+
+NoteText1 = "FYI - The " + ColorChoice + " is esential to your band's name."
+NoteText2 = "The color (or lack thereof) really brings out the true flare of your music."
+choices = choicea + " " + choiceb + " " + choicec + " " + choiced
+win = Window("Your Band")
+BandName = Text((150, 30), "Band Name:")
+BandName.fontSize = 14
+BandName.fill = Color("black")
+BandName.draw(win)
+Name = Text((150,81), choices)
+Name.fontSize = 18
+Name.fill = Color("black")
+Name.draw(win)
+Note = Text((150, 180), NoteText1)
+Note.fontSize = 9
+Note.fill = Color("grey")
+Note.draw(win)
+Name.draw(win)
+Note2 = Text((150, 200), NoteText2)
+Note2.fontSize = 8
+Note2.fill = Color("grey")
+Note2.draw(win)
